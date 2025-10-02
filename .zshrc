@@ -21,6 +21,7 @@ alias rundev="npm run dev"
 alias pulldevelop="git checkout develop && git pull"
 alias pullmain="git checkout main && git pull"
 alias runproxy="cd ~/workspace/british/ancillaires-scripts/shoppingCartProxy && npm run start"
+alias lg="lazygit"
 
 source /Users/francisco.arleo/workspace/british/ancillaires-scripts/portforward.sh
 source /Users/francisco.arleo/workspace/british/ancillaires-scripts/setprofile.sh
