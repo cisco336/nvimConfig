@@ -1,4 +1,8 @@
+export REGISTRY_TOKEN='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'
+
 export ZSH="$HOME/.oh-my-zsh"
+
+# export PATH="/opt/homebrew/bin/tmux:$PATH"
 
 ZSH_THEME="robbyrussell"
 
@@ -22,6 +26,7 @@ alias pulldevelop="git checkout develop && git pull"
 alias pullmain="git checkout main && git pull"
 alias runproxy="cd ~/workspace/british/ancillaires-scripts/shoppingCartProxy && npm run start"
 alias lg="lazygit"
+# alias gitDelete="git branch -D $(git branch | grep -v 'main' | grep -v 'develop')"
 
 source /Users/francisco.arleo/workspace/british/ancillaires-scripts/portforward.sh
 source /Users/francisco.arleo/workspace/british/ancillaires-scripts/setprofile.sh
@@ -56,3 +61,5 @@ bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
 alias ctags='/opt/homebrew/Cellar/ctags/5.8_2/bin/ctags'
+
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
