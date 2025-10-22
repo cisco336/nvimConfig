@@ -1,7 +1,4 @@
-
 export ZSH="$HOME/.oh-my-zsh"
-
-# export PATH="/opt/homebrew/bin/tmux:$PATH"
 
 ZSH_THEME="robbyrussell"
 
