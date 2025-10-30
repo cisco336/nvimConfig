@@ -1,19 +1,83 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
+-- local theme = "tokyonight"
+-- local theme = "Batman"
+-- local theme = 'Catppuccin Mocha'
+-- local theme = 'Catppuccin Mocha (Gogh)'
+-- local theme = 'matrix'
+local theme = 'SynthwaveAlpha'
+-- local theme = 'Synthwave Alpha (Gogh)'
+-- local theme = 'synthwave'
+
+-- Plugins
+local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
+local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
+
+tabline.setup(
+    {
+        options = {
+            icons_enabled = true,
+            theme = theme,
+            tabs_enabled = true,
+            theme_overrides = {},
+            section_separators = {
+                left = wezterm.nerdfonts.pl_left_hard_divider,
+                right = wezterm.nerdfonts.pl_right_hard_divider
+            },
+            component_separators = {
+                left = wezterm.nerdfonts.pl_left_soft_divider,
+                right = wezterm.nerdfonts.pl_right_soft_divider
+            },
+            tab_separators = {
+                left = wezterm.nerdfonts.pl_left_hard_divider,
+                right = wezterm.nerdfonts.pl_right_hard_divider
+            }
+        },
+        sections = {
+            tabline_a = {'mode'},
+            tabline_b = {'workspace'},
+            tabline_c = {' '},
+            tab_active = {
+                'index', {
+                    'parent',
+                    padding = 0
+                }, '/', {
+                    'cwd',
+                    padding = {
+                        left = 0,
+                        right = 1
+                    }
+                }, {
+                    'zoomed',
+                    padding = 0
+                }},
+            tab_inactive = {
+                'index', {
+                    'process',
+                    padding = {
+                        left = 0,
+                        right = 1
+                    }
+                }},
+            tabline_x = {'ram', 'cpu'},
+            tabline_y = {'datetime', 'battery'},
+            tabline_z = {'domain'}
+        },
+        extensions = {}
+    }
+)
+
 -- Font
 config.font_size = 14
 config.font = wezterm.font("JetBrains Mono")
 
 -- Theme
--- config.color_scheme = "tokyonight"
--- config.color_scheme = "Batman"
--- config.color_scheme = 'Catppuccin Mocha'
--- config.color_scheme = 'Catppuccin Mocha (Gogh)'
--- config.color_scheme = 'matrix'
--- config.color_scheme = 'SynthwaveAlpha'
--- config.color_scheme = 'Synthwave Alpha (Gogh)'
-config.color_scheme = 'synthwave'
+config.color_scheme = theme
+
+-- This should be after setting color_scheme
+-- bar.apply_to_config(config)
+tabline.apply_to_config(config)
 
 -- Window
 config.window_close_confirmation = 'NeverPrompt'
@@ -31,39 +95,6 @@ config.window_padding = {
 }
 config.default_cursor_style = "BlinkingBlock"
 config.cursor_blink_rate = 500
-
--- Tabs
-config.colors = {
-    tab_bar = {
-        background = '#0b0022',
-        active_tab = {
-            bg_color = '#2b2042',
-            fg_color = '#c0c0c0',
-            intensity = 'Normal',
-            underline = 'None',
-            italic = false,
-            strikethrough = false
-        },
-        inactive_tab = {
-            bg_color = '#1b1032',
-            fg_color = '#808080'
-        },
-        inactive_tab_hover = {
-            bg_color = '#3b3052',
-            fg_color = '#909090',
-            italic = true
-        },
-        new_tab = {
-            bg_color = '#1b1032',
-            fg_color = '#808080'
-        },
-        new_tab_hover = {
-            bg_color = '#3b3052',
-            fg_color = '#909090',
-            italic = true
-        }
-    }
-}
 
 -- Inactive Panes
 config.inactive_pane_hsb = {
