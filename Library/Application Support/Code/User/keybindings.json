@@ -1,0 +1,26 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "shift+cmd+space",
+    "command": "-editor.action.triggerParameterHints",
+    "when": "editorHasSignatureHelpProvider && editorTextFocus"
+  },
+  {
+    "key": "shift+cmd+space",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "-workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+shift+cmd+w",
+    "command": "workbench.action.terminal.killAll"
+  },
+  {
+    "key": "shift+cmd+w",
+    "command": "workbench.action.terminal.kill"
+  }
+]

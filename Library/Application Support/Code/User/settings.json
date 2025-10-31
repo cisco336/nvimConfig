@@ -1,0 +1,70 @@
+{
+  // workbench
+  "[*]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[lua]": {
+    "editor.defaultFormatter": "yinfei.luahelper"
+  },
+
+  // editor
+  "editor.fontFamily": "MesloLGL Nerd Font Mono",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 25,
+  "editor.guides.indentation": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.lineNumbers": "relative",
+  "editor.minimap.autohide": "scroll",
+  "editor.wordWrap": "on",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorStyle": "line",
+  "editor.cursorBlinking": "expand",
+  "css.lint.unknownAtRules": "ignore",
+
+  // Pretier
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "prettier.singleQuote": true,
+  "prettier.semi": true,
+
+  // Explorer
+  "explorer.compactFolders": false,
+  "explorer.enableDragAndDrop": true,
+  "explorer.enableUndo": true,
+
+  // Terminal
+  "terminal.integrated.fontFamily": "MesloLGL Nerd Font Mono",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.lineHeight": 1,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "block",
+  "terminal.integrated.cursorWidth": 2,
+  "terminal.integrated.fontWeight": "100",
+  "terminal.integrated.fontLigatures.enabled": true,
+  "terminal.integrated.defaultProfile.osx": "JavaScript Debug Terminal",
+  "application.shellEnvironmentResolutionTimeout": 20,
+
+  "security.workspace.trust.untrustedFiles": "open",
+  "luahelper.format.break_after_functiondef_lp": true,
+  "luahelper.format.break_after_functioncall_lp": true,
+  "luahelper.format.break_after_table_lb": true,
+  "luahelper.format.break_before_functioncall_rp": true,
+  "luahelper.format.break_before_functiondef_rp": true,
+  "workbench.colorTheme": "Catppuccin Dark Pro",
+  "git.autofetch": true,
+  "glowrays.enable": true,
+  "glowrays.intensity": 0.4,
+  "glowrays.includeLanguages": ["*"],
+  "glowrays.excludeLanguages": [],
+  "glowrays.disableOnErrors": true,
+  "glowrays.dynamic.config": "2 5 5 false",
+  "glowrays.pauseAnimationWhileTyping": false,
+  "glowrays.GlowOnDefinitionNames": false,
+  "glowrays.advancedMode": false,
+  "editor.accessibilitySupport": "off",
+  "workbench.iconTheme": "catppuccin-perfect-dracula"
+}
