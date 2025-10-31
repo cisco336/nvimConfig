@@ -1,0 +1,15 @@
+benjaminbenais.copilot-theme
+dbaeumer.vscode-eslint
+dsznajder.es7-react-js-snippets
+eamodio.gitlens
+enkia.tokyo-night
+esbenp.prettier-vscode
+formulahendry.auto-rename-tag
+github.copilot
+github.copilot-chat
+sharifdotg.catppuccin-dark-pro
+tamasfe.even-better-toml
+thang-nm.catppuccin-perfect-icons
+vitest.explorer
+vscodevim.vim
+yinfei.luahelper
