@@ -1,3 +1,5 @@
+export REGISTRY_TOKEN="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"
+
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
@@ -8,9 +10,9 @@ alias fzf="fzf --preview='bat --color=always {}'"
 alias branch="git branch | fzf | xargs git checkout"
 alias tag="git tag | fzf | xargs git checkout"
 alias ls="eza --icons=always -a"
+alias lsl="eza --icons=always -a -l"
 alias fonts="atsutil fonts -list"
 alias cd="z"
-
 alias coverageweb="npm run test:unit:coverage"
 alias fetch="git fetch --all"
 alias push="git push"
@@ -22,7 +24,8 @@ alias pulldevelop="git checkout develop && git pull"
 alias pullmain="git checkout main && git pull"
 alias runproxy="cd ~/workspace/british/ancillaires-scripts/shoppingCartProxy && npm run start"
 alias lg="lazygit"
-# alias gitDelete="git branch -D $(git branch | grep -v 'main' | grep -v 'develop')"
+alias gitDelete="git branch -D $(git branch | grep -v 'main' | grep -v 'develop')"
+alias chromenocors='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
 
 source /Users/francisco.arleo/workspace/british/ancillaires-scripts/portforward.sh
 source /Users/francisco.arleo/workspace/british/ancillaires-scripts/setprofile.sh
@@ -56,6 +59,6 @@ setopt hist_verify
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
-alias ctags='/opt/homebrew/Cellar/ctags/5.8_2/bin/ctags'
+alias chromenocors='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
 
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
