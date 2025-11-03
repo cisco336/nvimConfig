@@ -1,9 +1,4 @@
-export REGISTRY_TOKEN="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"
-
 export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="robbyrussell"
-
 
 alias refresh="source ~/.zshrc"
 alias fzf="fzf --preview='bat --color=always {}'"
