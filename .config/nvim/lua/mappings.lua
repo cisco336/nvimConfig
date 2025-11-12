@@ -18,5 +18,5 @@ map("n", "<Leader>A", function()
 end, { desc = "DAP: Conditional Breakpoint" })
 map("n", "<Leader>dr", dap.repl.toggle, { desc = "DAP: Toggle REPL" })
 map("n", "<Leader>du", dapui.toggle, { desc = "DAP: Toggle UI" })
-
+map("t", "<esc><esc>", "<c-\\><c-n>")
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
