@@ -13,3 +13,5 @@ thang-nm.catppuccin-perfect-icons
 vitest.explorer
 vscodevim.vim
 yinfei.luahelper
+eliverlara.andromeda
+wicked-labs.sequoia
