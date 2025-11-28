@@ -1,4 +1,4 @@
-// Place your key bindings in this file to override the defaults
+//  Place your key bindings in this file to override the defaults
 [
   {
     "key": "shift+cmd+space",
@@ -22,8 +22,9 @@
   {
     "key": "shift+cmd+w",
     "command": "workbench.action.terminal.kill"
-  }
-  // Navigation
+  },
+
+  //  Navigation
   {
     "key": "ctrl-h",
     "command": "workbench.action.navigateLeft"
@@ -38,6 +39,22 @@
   },
   {
     "key": "ctrl-j",
+    "command": "workbench.action.navigateDown"
+  },
+  {
+    "key": "ctrl+left",
+    "command": "workbench.action.navigateLeft"
+  },
+  {
+    "key": "ctrl+right",
+    "command": "workbench.action.navigateRight"
+  },
+  {
+    "key": "ctrl+up",
+    "command": "workbench.action.navigateUp"
+  },
+  {
+    "key": "ctrl+down",
     "command": "workbench.action.navigateDown"
   },
   {
@@ -82,8 +99,17 @@
     "command": "workbench.action.splitEditorDown",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
-
-  // Coding
+  {
+    "key": "tab",
+    "command": "workbench.action.nextEditorInGroup",
+    "when": "(vim.mode == 'Normal' && editorTextFocus) || !inputFocus"
+  },
+  {
+    "key": "shift-tab",
+    "command": "workbench.action.previousEditorInGroup",
+    "when": "(vim.mode == 'Normal' && editorTextFocus) || !inputFocus"
+  },
+  //  Coding
   {
     "key": "space c a",
     "command": "editor.action.codeAction",
@@ -163,7 +189,7 @@
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
   },
 
-  // File Explorer
+  //  File Explorer
   {
     "key": "r",
     "command": "renameFile",
@@ -222,7 +248,7 @@
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && explorerResourceIsFolder && !inputFocus"
   },
 
-  // Debug
+  //  Debug
   {
     "key": "space d a",
     "command": "workbench.action.debug.selectandstart",
