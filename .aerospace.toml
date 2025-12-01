@@ -10,11 +10,6 @@ default-root-container-orientation = 'auto'
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = false
 
-# Mode toggles
-
-
-
-
 [key-mapping]
     preset = 'qwerty'
 
@@ -57,6 +52,19 @@ automatically-unhide-macos-hidden-apps = false
     alt-j = 'focus down'
     alt-k = 'focus up'
     alt-l = 'focus right'
+    alt-left = 'focus left'
+    alt-down = 'focus down'
+    alt-up = 'focus up'
+    alt-right = 'focus right'
+
+    alt-shift-h = 'move left'
+    alt-shift-j = 'move down'
+    alt-shift-k = 'move up'
+    alt-shift-l = 'move right'
+    alt-shift-left = 'move left'
+    alt-shift-down = 'move down'
+    alt-shift-up = 'move up'
+    alt-shift-right = 'move right'
 
     alt-t = 'join-with left'
     alt-y = 'join-with down'
@@ -69,11 +77,6 @@ automatically-unhide-macos-hidden-apps = false
     alt-d = 'layout tiles horizontal horizontal' # 'layout toggle split' in i3
 
     alt-shift-space = 'layout floating tiling' # 'floating toggle' in i3
-
-    alt-shift-h = 'move left'
-    alt-shift-j = 'move down'
-    alt-shift-k = 'move up'
-    alt-shift-l = 'move right'
 
     alt-minus = 'resize smart -50'
     alt-equal = 'resize smart +50'
