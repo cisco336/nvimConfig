@@ -1,6 +1,11 @@
 //  Place your key bindings in this file to override the defaults
 [
   {
+    "key": "cmd+/",
+    "command": "editor.action.commentLine",
+    "when": "vim.mode == 'Normal' && editorHasSignatureHelpProvider && editorTextFocus"
+  },
+  {
     "key": "shift+cmd+space",
     "command": "-editor.action.triggerParameterHints",
     "when": "editorHasSignatureHelpProvider && editorTextFocus"
