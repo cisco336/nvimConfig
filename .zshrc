@@ -11,20 +11,25 @@ alias cd="z"
 alias coverageweb="npm run test:unit:coverage"
 alias fetch="git fetch --all"
 alias push="git push"
+alias ph="git push"
 alias pull="git pull"
+alias pl="git pull"
 alias commit="git cz c"
 alias status="git status"
+alias sts="git status"
+alias chk="git checkout"
+alias chkb="git checkout -b"
 alias rundev="npm run dev"
 alias pulldevelop="git checkout develop && git pull"
 alias pullmain="git checkout main && git pull"
-alias runproxy="cd ~/workspace/british/ancillaires-scripts/shoppingCartProxy && npm run start"
+alias runproxy="cd ~/workspace/british/ancillaries-scripts/shoppingCartProxy && npm run start"
 alias lg="lazygit"
 alias gitDelete="git branch -D $(git branch | grep -v 'main' | grep -v 'develop')"
 alias chromenocors='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
 
-source /Users/francisco.arleo/workspace/british/ancillaires-scripts/portforward.sh
-source /Users/francisco.arleo/workspace/british/ancillaires-scripts/setprofile.sh
-source /Users/francisco.arleo/workspace/british/ancillaires-scripts/convertmp.sh
+source /Users/francisco.arleo/workspace/british/ancillaries-scripts/portforward.sh
+source /Users/francisco.arleo/workspace/british/ancillaries-scripts/setprofile.sh
+source /Users/francisco.arleo/workspace/british/ancillaries-scripts/convertmp.sh
 
 export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
