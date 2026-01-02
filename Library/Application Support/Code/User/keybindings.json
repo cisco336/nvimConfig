@@ -1,4 +1,4 @@
-//  Place your key bindings in this file to override the defaults
+// Place your key bindings in this file to override the defaults
 [
   {
     "key": "cmd+/",
@@ -11,7 +11,7 @@
     "when": "editorHasSignatureHelpProvider && editorTextFocus"
   },
   {
-    "key": "shift+cmd+space",
+    "key": "ctrl+cmd+space",
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
   },
@@ -28,10 +28,16 @@
     "key": "shift+cmd+w",
     "command": "workbench.action.terminal.kill"
   },
-
-  //  Navigation
+  {
+    "key": "ctrl+shift+d",
+    "command": "editor.action.duplicateSelection"
+  },
   {
     "key": "ctrl-h",
+    "command": "workbench.action.navigateLeft"
+  },
+  {
+    "key": "ctrl+left",
     "command": "workbench.action.navigateLeft"
   },
   {
@@ -39,24 +45,20 @@
     "command": "workbench.action.navigateRight"
   },
   {
+    "key": "ctrl+right",
+    "command": "workbench.action.navigateRight"
+  },
+  {
     "key": "ctrl-k",
+    "command": "workbench.action.navigateUp"
+  },
+  {
+    "key": "ctrl+up",
     "command": "workbench.action.navigateUp"
   },
   {
     "key": "ctrl-j",
     "command": "workbench.action.navigateDown"
-  },
-  {
-    "key": "ctrl+left",
-    "command": "workbench.action.navigateLeft"
-  },
-  {
-    "key": "ctrl+right",
-    "command": "workbench.action.navigateRight"
-  },
-  {
-    "key": "ctrl+up",
-    "command": "workbench.action.navigateUp"
   },
   {
     "key": "ctrl+down",
@@ -90,6 +92,26 @@
     "when": "sideBarFocus && !inputFocus"
   },
   {
+    "key": "space g g",
+    "command": "runCommands",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)",
+    "args": {
+      "commands": ["workbench.view.scm", "workbench.scm.focus"]
+    }
+  },
+  {
+    "key": "shift-s",
+    "command": "runCommands",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus",
+    "args": {
+      "commands": [
+        "workbench.action.splitEditorDown",
+        "explorer.openAndPassFocus",
+        "workbench.action.closeOtherEditors"
+      ]
+    }
+  },
+  {
     "key": "space e",
     "when": "vim.mode == 'Normal' && editorTextFocus && foldersViewVisible",
     "command": "workbench.action.toggleSidebarVisibility"
@@ -114,7 +136,6 @@
     "command": "workbench.action.previousEditorInGroup",
     "when": "(vim.mode == 'Normal' && editorTextFocus) || !inputFocus"
   },
-  //  Coding
   {
     "key": "space c a",
     "command": "editor.action.codeAction",
@@ -181,20 +202,10 @@
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
-    "key": "space g g",
-    "command": "runCommands",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)",
-    "args": {
-      "commands": ["workbench.view.scm", "workbench.scm.focus"]
-    }
-  },
-  {
     "key": "ctrl-n",
     "command": "editor.action.addSelectionToNextFindMatch",
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
   },
-
-  //  File Explorer
   {
     "key": "r",
     "command": "renameFile",
@@ -231,18 +242,6 @@
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
   {
-    "key": "shift-s",
-    "command": "runCommands",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus",
-    "args": {
-      "commands": [
-        "workbench.action.splitEditorDown",
-        "explorer.openAndPassFocus",
-        "workbench.action.closeOtherEditors"
-      ]
-    }
-  },
-  {
     "key": "enter",
     "command": "explorer.openAndPassFocus",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsFolder && !inputFocus"
@@ -252,8 +251,6 @@
     "command": "list.toggleExpand",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && explorerResourceIsFolder && !inputFocus"
   },
-
-  //  Debug
   {
     "key": "space d a",
     "command": "workbench.action.debug.selectandstart",
@@ -283,5 +280,9 @@
     "key": "space d c",
     "command": "workbench.action.debug.continue",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && inDebugMode && debugState == 'stopped'"
+  },
+  {
+    "key": "ctrl+shift+cmd+k",
+    "command": "workbench.action.openGlobalKeybindingsFile"
   }
 ]
