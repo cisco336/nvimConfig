@@ -1,5 +1,19 @@
 export ZSH="$HOME/.oh-my-zsh"
 
+plugins=(
+  git
+  fzf
+  node
+  npm
+  nvm
+  sudo              # Press ESC twice to add sudo to previous command
+  extract           # Universal archive extractor (works with .tar, .zip, .gz, etc.)
+  history           # Enhanced history commands
+  command-not-found # Suggests package to install for missing commands
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
+
 alias refresh="source ~/.zshrc"
 alias fzf="fzf --preview='bat --color=always {}'"
 alias branch="git branch | fzf | xargs git checkout"
@@ -25,11 +39,10 @@ alias pullmain="git checkout main && git pull"
 alias runproxy="cd ~/workspace/british/ancillaries-scripts/shoppingCartProxy && npm run start"
 alias lg="lazygit"
 alias gitDelete="git branch -D $(git branch | grep -v 'main' | grep -v 'develop')"
-alias chromenocors='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
 
-source /Users/francisco.arleo/workspace/british/ancillaries-scripts/portforward.sh
-source /Users/francisco.arleo/workspace/british/ancillaries-scripts/setprofile.sh
-source /Users/francisco.arleo/workspace/british/ancillaries-scripts/convertmp.sh
+# source /Users/francisco.arleo/workspace/british/ancillaries-scripts/portforward.sh
+# source /Users/francisco.arleo/workspace/british/ancillaries-scripts/setprofile.sh
+# source /Users/francisco.arleo/workspace/british/ancillaries-scripts/convertmp.sh
 
 export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -59,6 +72,8 @@ setopt hist_verify
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
-alias chromenocors='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
+# alias chromenocors='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
 
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+source $ZSH/oh-my-zsh.sh
