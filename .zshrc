@@ -1,3 +1,5 @@
+export REGISTRY_TOKEN="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"
+
 export ZSH="$HOME/.oh-my-zsh"
 
 plugins=(
@@ -6,6 +8,7 @@ plugins=(
   node
   npm
   nvm
+  eza
   sudo              # Press ESC twice to add sudo to previous command
   extract           # Universal archive extractor (works with .tar, .zip, .gz, etc.)
   history           # Enhanced history commands
@@ -18,8 +21,8 @@ alias refresh="source ~/.zshrc"
 alias fzf="fzf --preview='bat --color=always {}'"
 alias branch="git branch | fzf | xargs git checkout"
 alias tag="git tag | fzf | xargs git checkout"
-alias ls="eza --icons=always -a"
-alias lsl="eza --icons=always -a -l"
+# alias ls="eza --icons=always -a"
+# alias lsl="eza --icons=always -a -l"
 alias fonts="atsutil fonts -list"
 alias cd="z"
 alias coverageweb="npm run test:unit:coverage"
@@ -39,10 +42,12 @@ alias pullmain="git checkout main && git pull"
 alias runproxy="cd ~/workspace/british/ancillaries-scripts/shoppingCartProxy && npm run start"
 alias lg="lazygit"
 alias gitDelete="git branch -D $(git branch | grep -v 'main' | grep -v 'develop')"
+alias chromenocors='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
+alias greset='git reset --hard HEAD'
 
-# source /Users/francisco.arleo/workspace/british/ancillaries-scripts/portforward.sh
-# source /Users/francisco.arleo/workspace/british/ancillaries-scripts/setprofile.sh
-# source /Users/francisco.arleo/workspace/british/ancillaries-scripts/convertmp.sh
+source /Users/francisco.arleo/workspace/british/ancillaries-scripts/portforward.sh
+source /Users/francisco.arleo/workspace/british/ancillaries-scripts/setprofile.sh
+source /Users/francisco.arleo/workspace/british/ancillaries-scripts/convertmp.sh
 
 export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -72,7 +77,7 @@ setopt hist_verify
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
-# alias chromenocors='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
+alias chromenocors='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
 
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
