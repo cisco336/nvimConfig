@@ -1,4 +1,3 @@
-export REGISTRY_TOKEN="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"
 
 export ZSH="$HOME/.oh-my-zsh"
 
