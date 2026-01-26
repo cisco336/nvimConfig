@@ -1,0 +1,118 @@
+[
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      // Comment line
+      "cmd-/": "editor::ToggleComments",
+
+      // Leader key combinations (space as leader)
+      "space ,": "tab_switcher::Toggle",
+      "space space": "file_finder::Toggle",
+      "space e": "workspace::ToggleLeftDock",
+      "space g g": "workspace::ToggleBottomDock",
+
+      // Code actions
+      "space c a": "editor::ToggleCodeActions",
+      "space c r": "editor::Rename",
+      "space c s": "outline::Toggle",
+
+      // Buffer/tab management
+      "space b d": "pane::CloseActiveItem",
+      // "space b o": "pane::CloseInactiveItems",
+
+      // Go to definition/references
+      "space g d": "editor::GoToDefinition",
+      "space g r": "editor::FindAllReferences",
+      "space g i": "editor::GoToImplementation",
+
+      // Search
+      "space s g": "workspace::NewSearch",
+
+      // Split operations
+      "s h": "pane::SplitRight",
+      "s v": "pane::SplitDown",
+
+      // Debug operations
+      "space d b": "editor::ToggleBreakpoint",
+      // "space d c": "editor::Continue",
+      // "space d o": "editor::StepOver",
+      // "space d t": "editor::Stop",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      // Multi-cursor
+      "ctrl-n": "editor::SelectNext",
+
+      // Show hover
+      "shift-k": "editor::Hover",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == visual_line",
+    "bindings": {
+      // Move lines up/down
+      "shift-k": "editor::MoveLineUp",
+      "shift-j": "editor::MoveLineDown",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      // Terminal toggle
+      "ctrl-cmd-space": "workspace::ToggleBottomDock",
+
+      // Kill terminals
+      // "ctrl-shift-cmd-w": "terminal::CloseAllTerminals",
+      // "shift-cmd-w": "terminal::CloseTerminal",
+
+      // Duplicate selection
+      "ctrl-shift-d": "editor::DuplicateSelection",
+
+      // Pane navigation
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-left": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-right": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-up": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-down": "workspace::ActivatePaneDown",
+
+      // Tab navigation
+      "tab": "pane::ActivateNextItem",
+      "shift-tab": "pane::ActivatePreviousItem",
+
+      // Open keybindings
+      "ctrl-shift-cmd-k": "zed::OpenKeymap",
+    },
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      // File operations in project panel
+      "r": "project_panel::Rename",
+      "c": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "x": "project_panel::Cut",
+      "d": "project_panel::Delete",
+      "a": "project_panel::NewFile",
+      // "s": "project_panel::OpenToSide",
+      "enter": "project_panel::Open",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      // Terminal specific overrides
+      "ctrl-cmd-space": "workspace::ToggleBottomDock",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-cmd-space": null,
+    },
+  },
+]
