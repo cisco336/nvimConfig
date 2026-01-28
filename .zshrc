@@ -1,83 +1,106 @@
+# Performance optimization: skip global compinit
+export skip_global_compinit=1
 
+# Oh My Zsh configuration
 export ZSH="$HOME/.oh-my-zsh"
 
+# Minimal plugin set for faster startup
 plugins=(
   git
-  fzf
-  node
   npm
-  nvm
   eza
-  sudo              # Press ESC twice to add sudo to previous command
-  extract           # Universal archive extractor (works with .tar, .zip, .gz, etc.)
-  history           # Enhanced history commands
-  command-not-found # Suggests package to install for missing commands
-  zsh-autosuggestions
-  zsh-syntax-highlighting
+  sudo
+  extract
+  history
 )
 
+# Load oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+
+# Aliases (grouped by functionality)
+# General shortcuts
 alias refresh="source ~/.zshrc"
-alias fzf="fzf --preview='bat --color=always {}'"
-alias branch="git branch | fzf | xargs git checkout"
-alias tag="git tag | fzf | xargs git checkout"
-# alias ls="eza --icons=always -a"
-# alias lsl="eza --icons=always -a -l"
-alias fonts="atsutil fonts -list"
+alias aliases="~/alias_reminder.sh"
 alias cd="z"
-alias coverageweb="npm run test:unit:coverage"
+
+# Git aliases (kept only non-duplicates)
+# Removed: push (use gp), pull (use gl), status (use gst), chk (use gco), chkb (use gcb)
 alias fetch="git fetch --all"
-alias push="git push"
-alias ph="git push"
-alias pull="git pull"
-alias pl="git pull"
-alias commit="git cz c"
-alias status="git status"
-alias sts="git status"
-alias chk="git checkout"
-alias chkb="git checkout -b"
-alias rundev="npm run dev"
+alias ph="git push"  # short alias for gp
+alias pl="git pull"  # short alias for gl
+alias commit="git cz c"  # commitizen specific
+alias sts="git status"  # shorter than gst
+alias greset='git reset --hard HEAD'
 alias pulldevelop="git checkout develop && git pull"
 alias pullmain="git checkout main && git pull"
-alias runproxy="cd ~/workspace/british/ancillaries-scripts/shoppingCartProxy && npm run start"
 alias lg="lazygit"
-alias gitDelete="git branch -D $(git branch | grep -v 'main' | grep -v 'develop')"
+
+# Development aliases
+alias rundev="npm run dev"  # could use npmrd but this is clearer
+alias coverageweb="npm run test:unit:coverage"
+
+# Utility aliases
+alias fonts="atsutil fonts -list"
 alias chromenocors='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
-alias greset='git reset --hard HEAD'
 
-source /Users/francisco.arleo/workspace/british/ancillaries-scripts/portforward.sh
-source /Users/francisco.arleo/workspace/british/ancillaries-scripts/setprofile.sh
-source /Users/francisco.arleo/workspace/british/ancillaries-scripts/convertmp.sh
+# Conditional sourcing of external scripts
+[ -f "/Users/francisco.arleo/workspace/british/ancillaries-scripts/portforward.sh" ] && source /Users/francisco.arleo/workspace/british/ancillaries-scripts/portforward.sh
+[ -f "/Users/francisco.arleo/workspace/british/ancillaries-scripts/setprofile.sh" ] && source /Users/francisco.arleo/workspace/british/ancillaries-scripts/setprofile.sh
+[ -f "/Users/francisco.arleo/workspace/british/ancillaries-scripts/convertmp.sh" ] && source /Users/francisco.arleo/workspace/british/ancillaries-scripts/convertmp.sh
 
+# Lazy load NVM for faster startup
 export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+nvm() {
+    unset -f nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+    nvm "$@"
+}
 
-# starship
+# Lazy load thefuck for better performance
+fuck() {
+    unset -f fuck
+    eval "$(thefuck --alias=fuck)"
+    fuck "$@"
+}
+
+# Lazy load zsh-syntax-highlighting (moved to end for performance)
+zsh_syntax_highlighting() {
+    if [ -f "$ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+        source "$ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+    elif [ -f "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+        source "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+    fi
+}
+
+# Initialize essential tools
 eval "$(starship init zsh)"
-
-# FZF
-source <(fzf --zsh)
-
-# zoxide
 eval "$(zoxide init zsh)"
 
-# the fuck
-eval "$(thefuck --alias=fuck)"
+# FZF setup with performance check
+if command -v fzf &> /dev/null; then
+    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh || source <(fzf --zsh)
+    alias fzf="fzf --preview='bat --color=always {}'"
+    alias branch="git branch | fzf | xargs git checkout"
+    alias tag="git tag | fzf | xargs git checkout"
+fi
 
-# History setup
+# Load zsh-autosuggestions if available
+[ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+# History configuration (optimized)
 HISTFILE=$HOME/.zhistory
-SAVEHIST=1000
-HISTSIZE=999
+SAVEHIST=10000
+HISTSIZE=10000
 setopt share_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
+setopt hist_ignore_space
 
+# Key bindings for history search
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
-alias chromenocors='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
-
-source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-source $ZSH/oh-my-zsh.sh
+# Load syntax highlighting last for better performance
+zsh_syntax_highlighting
