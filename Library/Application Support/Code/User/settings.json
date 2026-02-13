@@ -54,17 +54,8 @@
   "luahelper.format.break_after_table_lb": true,
   "luahelper.format.break_before_functioncall_rp": true,
   "luahelper.format.break_before_functiondef_rp": true,
-  "workbench.colorTheme": "Catppuccin Dark Pro",
   "git.autofetch": true,
-  "glowrays.enable": true,
-  "glowrays.intensity": 0.4,
-  "glowrays.includeLanguages": ["*"],
-  "glowrays.excludeLanguages": [],
-  "glowrays.disableOnErrors": true,
-  "glowrays.dynamic.config": "2 5 5 false",
-  "glowrays.pauseAnimationWhileTyping": false,
-  "glowrays.GlowOnDefinitionNames": false,
-  "glowrays.advancedMode": false,
   "editor.accessibilitySupport": "off",
-  "workbench.iconTheme": "catppuccin-perfect-dracula"
+  "workbench.colorTheme": "Sequoia Moonlight",
+  "workbench.iconTheme": "catppuccin-perfect-sequoia"
 }
