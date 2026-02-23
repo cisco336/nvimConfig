@@ -1,6 +1,8 @@
 # Performance optimization: skip global compinit
 export skip_global_compinit=1
 
+export EDITOR="code-insiders"
+
 # Oh My Zsh configuration
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -47,6 +49,36 @@ alias chromenocors='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/G
 [ -f "/Users/francisco.arleo/workspace/british/ancillaries-scripts/portforward.sh" ] && source /Users/francisco.arleo/workspace/british/ancillaries-scripts/portforward.sh
 [ -f "/Users/francisco.arleo/workspace/british/ancillaries-scripts/setprofile.sh" ] && source /Users/francisco.arleo/workspace/british/ancillaries-scripts/setprofile.sh
 [ -f "/Users/francisco.arleo/workspace/british/ancillaries-scripts/convertmp.sh" ] && source /Users/francisco.arleo/workspace/british/ancillaries-scripts/convertmp.sh
+
+# --- Terminal Utilities ---
+
+# Weather (Usage: weather or weather London)
+weather() { curl -s "wttr.in/${1:-}" }
+
+# Dictionary (Usage: define apple)
+define() { curl -s "dict://dict.org/d:${1}" }
+
+# Cheat Sheet (Usage: cheat tar or cheat python/read)
+cheat() { curl -s "cheat.sh/${1}" }
+
+# IP & Network (Usage: myip or geoip)
+alias myip='curl -s ifconfig.me; echo'
+alias geoip='curl -s ipinfo.io'
+
+# QR Code Generator (Usage: echo "Hello" | qr)
+alias qr='curl -F "-=<-" qrenco.de'
+
+# Stocks (Usage: stock AAPL)
+stock() { curl -s "terminal-stocks.dev/${1}" }
+
+# News (Usage: news or news tech)
+news() { curl -s "getnews.tech/${1:-}" }
+
+# Fun & Random
+alias quote='curl -s https://api.quotable.io/random | jq -r ".content + \" — \" + .author"'
+alias advice='curl -s https://api.adviceslip.com/advice | jq -r ".slip.advice"'
+
+# --- End Utilities ---
 
 # Lazy load NVM for faster startup
 export NVM_DIR="$HOME/.nvm"
@@ -101,6 +133,14 @@ setopt hist_ignore_space
 # Key bindings for history search
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
 
 # Load syntax highlighting last for better performance
 zsh_syntax_highlighting
