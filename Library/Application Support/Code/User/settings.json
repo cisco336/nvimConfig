@@ -1,11 +1,12 @@
 {
-  // workbench
   "[*]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[lua]": {
-    "editor.defaultFormatter": "yinfei.luahelper"
+    "editor.defaultFormatter": "yinfei.luahelper",
   },
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 5000,
 
   // editor
   "editor.fontFamily": "MesloLGL Nerd Font Mono",
@@ -15,7 +16,7 @@
   "editor.guides.indentation": true,
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": "active",
-  "editor.lineNumbers": "relative",
+  "editor.lineNumbers": "on",
   "editor.minimap.autohide": "scroll",
   "editor.wordWrap": "on",
   "editor.cursorSmoothCaretAnimation": "on",
@@ -57,5 +58,24 @@
   "git.autofetch": true,
   "editor.accessibilitySupport": "off",
   "workbench.colorTheme": "Sequoia Moonlight",
-  "workbench.iconTheme": "catppuccin-perfect-sequoia"
+  "workbench.iconTheme": "catppuccin-perfect-aura",
+  "workbench.productIconTheme": "bongocat",
+  "[dotenv]": {
+    "editor.defaultFormatter": "lumirelle.shell-format-rev",
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "lumirelle.shell-format-rev",
+  },
+  "explorer.confirmDragAndDrop": false,
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  "search.defaultViewMode": "tree",
+
+  // Workbench
+  "workbench.sideBar.location": "right",
+  "workbench.activityBar.autoHide": true,
+  "workbench.activityBar.compact": true,
+  "workbench.statusBar.visible": false,
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "json.schemaDownload.enable": false,
 }
