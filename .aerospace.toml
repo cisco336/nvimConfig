@@ -23,6 +23,30 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 ]
 
+[[on-window-detected]]
+    if.app-id = 'com.github.wez.wezterm'
+    run = 'move-node-to-workspace Z'
+
+[[on-window-detected]]
+    if.app-id = 'com.microsoft.VSCode'
+    run = 'move-node-to-workspace X'
+    
+[[on-window-detected]]
+    if.app-id = 'com.github.th-ch.youtube-music'
+    run = 'move-node-to-workspace C'
+
+[[on-window-detected]]
+    if.app-id = 'com.tinyspeck.slackmacgap'
+    run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+    if.app-id = 'com.google.Chrome'
+    run = 'move-node-to-workspace 2'
+    
+[[on-window-detected]]
+    if.app-id = 'com.microsoft.Outlook'
+    run = 'move-node-to-workspace M'
+
 [key-mapping]
     preset = 'qwerty'
 
@@ -91,14 +115,14 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     alt-7 = 'workspace 7'
     alt-8 = 'workspace 8'
     alt-9 = 'workspace 9'
-    alt-0 = 'workspace 10'
-    alt-z = 'workspace 11'
-    alt-x = 'workspace 12'
-    alt-c = 'workspace 13'
-    alt-v = 'workspace 14'
-    alt-b = 'workspace 15'
-    alt-n = 'workspace 16'
-    alt-m = 'workspace 17'
+    alt-0 = 'workspace 0'
+    alt-z = 'workspace Z'
+    alt-x = 'workspace X'
+    alt-c = 'workspace C'
+    alt-v = 'workspace V'
+    alt-b = 'workspace B'
+    alt-n = 'workspace N'
+    alt-m = 'workspace M'
 
     alt-shift-1 = 'move-node-to-workspace 1'
     alt-shift-2 = 'move-node-to-workspace 2'
@@ -109,14 +133,14 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     alt-shift-7 = 'move-node-to-workspace 7'
     alt-shift-8 = 'move-node-to-workspace 8'
     alt-shift-9 = 'move-node-to-workspace 9'
-    alt-shift-0 = 'move-node-to-workspace 10'
-    alt-shift-z = 'move-node-to-workspace 11'
-    alt-shift-x = 'move-node-to-workspace 12'
-    alt-shift-c = 'move-node-to-workspace 13'
-    alt-shift-v = 'move-node-to-workspace 14'
-    alt-shift-b = 'move-node-to-workspace 15'
-    alt-shift-n = 'move-node-to-workspace 16'
-    alt-shift-m = 'move-node-to-workspace 17'
+    alt-shift-0 = 'move-node-to-workspace 0'
+    alt-shift-z = 'move-node-to-workspace Z'
+    alt-shift-x = 'move-node-to-workspace X'
+    alt-shift-c = 'move-node-to-workspace C'
+    alt-shift-v = 'move-node-to-workspace V'
+    alt-shift-b = 'move-node-to-workspace B'
+    alt-shift-n = 'move-node-to-workspace N'
+    alt-shift-m = 'move-node-to-workspace M'
 
 [mode.service.binding]
     ctrl-alt-s = 'mode main'
