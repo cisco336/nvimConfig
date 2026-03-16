@@ -7,21 +7,60 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "relative_line_numbers": "disabled",
+  "show_wrap_guides": false,
+  "diagnostics": {
+    "include_warnings": true,
+    "inline": {
+      "enabled": true,
+    },
+  },
+  "preview_tabs": {
+    "enable_preview_from_file_finder": true,
+  },
+  "tabs": {
+    "show_diagnostics": "all",
+    "file_icons": true,
+    "git_status": true,
+  },
+  "title_bar": {
+    "show_branch_icon": true,
+    "show_branch_name": true,
+    "show_onboarding_banner": false,
+    "show_project_items": true,
+    "show_user_menu": true,
+  },
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false,
+  },
+  "toolbar": {
+    "quick_actions": false,
+  },
+  "debugger": {
+    "dock": "right",
+  },
   "git_panel": {
-    "tree_view": true
+    "sort_by_path": true,
+    "tree_view": true,
   },
   "agent": {
+    "tool_permissions": {
+      "default": "allow",
+    },
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4"
+      "model": "claude-sonnet-4",
     },
     "favorite_models": [],
-    "model_parameters": []
+    "model_parameters": [],
+    "commit_message_model": {
+      "provider": "anthropic",
+      "model": "claude-3-5-haiku",
+    },
   },
-  "features": {
-    "edit_prediction_provider": "copilot",
-  },
-  "soft_wrap": "bounded",
+  "soft_wrap": "editor_width",
   "vim": {
     "cursor_shape": {
       "visual": "hollow",
@@ -35,7 +74,8 @@
     "dock": "right",
   },
   "edit_predictions": {
-    "mode": "subtle",
+    "provider": "copilot",
+    "mode": "eager",
   },
   "buffer_font_family": "JetBrainsMonoNL Nerd Font Mono",
   "icon_theme": {
@@ -47,18 +87,45 @@
   "terminal": {
     "font_family": "JetBrainsMonoNL Nerd Font Mono",
     "font_weight": 100,
-    "font_size": 14.0,
+    "font_size": 15.0,
+    "line_height": { "custom": 1.5 },
     "font_features": {
       "ligatures": true,
     },
     "shell": {
-      "program": "zsh",
+      "program": "/bin/zsh",
     },
   },
   "ui_font_size": 16,
   "ensure_final_newline_on_save": true,
-  "buffer_line_height": "comfortable",
+  "buffer_line_height": { "custom": 2 },
   "buffer_font_size": 15,
-  "theme": "Catppuccin Mocha (Blur)",
+  "theme": "Neon Pulse Theme",
   "vim_mode": true,
+  "theme_overrides": {
+    "Neon Pulse Theme": {
+      "border": "#39395200",
+      "border.variant": "#39395200",
+      "element.background": "#39395296",
+      "tab.active_background": "#121220FF",
+      "scrollbar.thumb.border": "#39395200",
+      "scrollbar.track.background": "#1E1E2E00",
+      "scrollbar.track.border": "#2D2D4400",
+      "editor.background": "#121220FF",
+      "editor.gutter.background": "#121220FF",
+      "terminal.background": "#121220FF",
+      "minimap.thumb.border": "#39395200",
+      "syntax": {
+        "type": {
+          "font_style": "italic",
+        },
+        "comment": {
+          "font_style": "italic",
+        },
+        "comment.doc": {
+          "font_style": "italic",
+        },
+      },
+    },
+  },
 }
