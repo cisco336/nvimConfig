@@ -3,12 +3,13 @@ local config = wezterm.config_builder()
 
 -- local theme = "tokyonight"
 -- local theme = "Batman"
--- local theme = 'Catppuccin Mocha'
--- local theme = 'Catppuccin Mocha (Gogh)'
--- local theme = 'matrix'
-local theme = "SynthwaveAlpha"
+local theme = 'Catppuccin Mocha'
+-- local theme = "Catppuccin Mocha (Gogh)"
+-- local theme = "matrix"
+-- local theme = "SynthwaveAlpha"
+-- local theme = "Sequoia Moonlight"
 -- local theme = 'Synthwave Alpha (Gogh)'
--- local theme = 'synthwave'
+-- local theme = "synthwave"
 
 -- Plugins
 local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
@@ -61,6 +62,29 @@ config.inactive_pane_hsb = {
     brightness = 0.5
 }
 
+config.launch_menu = {
+    {
+        label = 'Run Seats Repo',
+        args = { 'zsh', '-il', '-c', 'npm run dev; zsh -i' },
+        cwd = '/Users/francisco.arleo/workspace/british/seats',
+    },
+    {
+        label = 'Run Marketplace Repo',
+        args = { 'zsh', '-il', '-c', 'npm run dev; zsh -i' },
+        cwd = '/Users/francisco.arleo/workspace/british/marketplace',
+    },
+    {
+        label = 'Run Ancillaries Repo',
+        args = { 'zsh', '-il', '-c', 'npm run dev; zsh -i' },
+        cwd = '/Users/francisco.arleo/workspace/british/ancillaries',
+    },
+    {
+        label = 'Run ShoppingCart Repo',
+        args = { 'zsh', '-il', '-c', 'git checkout main && git pull && PORT=3001 npm run dev; zsh -i' },
+        cwd = '/Users/francisco.arleo/workspace/british/shopping-cart',
+    }
+}
+
 -- Keys
 config.keys = {
     {
@@ -72,38 +96,38 @@ config.keys = {
             }
         )
     }, {
-        key = "d",
-        mods = "SHIFT|CMD",
-        action = wezterm.action.SplitHorizontal(
-            {
-                domain = "CurrentPaneDomain"
-            }
-        )
-    }, {
-        key = "w",
-        mods = "CMD",
-        action = wezterm.action.CloseCurrentPane(
-            {
-                confirm = false
-            }
-        )
-    }, {
-        key = "w",
-        mods = "SHIFT|CMD",
-        action = wezterm.action.CloseCurrentTab(
-            {
-                confirm = false
-            }
-        )
-    }, {
-        key = "o",
-        mods = "CTRL",
-        action = wezterm.action(
-            {
-                PaneSelect = {}
-            }
-        )
-    }, -- Show the selector, using your own alphabet
+    key = "d",
+    mods = "SHIFT|CMD",
+    action = wezterm.action.SplitHorizontal(
+        {
+            domain = "CurrentPaneDomain"
+        }
+    )
+}, {
+    key = "w",
+    mods = "CMD",
+    action = wezterm.action.CloseCurrentPane(
+        {
+            confirm = false
+        }
+    )
+}, {
+    key = "w",
+    mods = "SHIFT|CMD",
+    action = wezterm.action.CloseCurrentTab(
+        {
+            confirm = false
+        }
+    )
+}, {
+    key = "o",
+    mods = "CTRL",
+    action = wezterm.action(
+        {
+            PaneSelect = {}
+        }
+    )
+}, -- Show the selector, using your own alphabet
     {
         key = "p",
         mods = "CTRL",
@@ -115,37 +139,45 @@ config.keys = {
             }
         )
     }, {
-        key = "RightArrow",
-        mods = "CTRL",
-        action = wezterm.action.AdjustPaneSize {'Right', 5}
-    }, {
-        key = "LeftArrow",
-        mods = "CTRL",
-        action = wezterm.action.AdjustPaneSize {'Left', 5}
-    }, {
-        key = "UpArrow",
-        mods = "CTRL",
-        action = wezterm.action.AdjustPaneSize {'Up', 5}
-    }, {
-        key = "DownArrow",
-        mods = "CTRL",
-        action = wezterm.action.AdjustPaneSize {'Down', 5}
-    }, {
-        key = "k",
-        mods = "CMD",
-        action = wezterm.action.ClearScrollback("ScrollbackAndViewport")
-    }, {
-        key = "F9",
-        mods = "ALT",
-        action = wezterm.action.ShowTabNavigator
-    }, {
-        key = 'b',
-        mods = 'CTRL',
-        action = wezterm.action.RotatePanes 'CounterClockwise'
-    }, {
-        key = 'n',
-        mods = 'CTRL',
-        action = wezterm.action.RotatePanes 'Clockwise'
-    }}
+    key = "RightArrow",
+    mods = "CTRL",
+    action = wezterm.action.AdjustPaneSize({ "Right", 5 })
+}, {
+    key = "LeftArrow",
+    mods = "CTRL",
+    action = wezterm.action.AdjustPaneSize({ "Left", 5 })
+}, {
+    key = "UpArrow",
+    mods = "CTRL",
+    action = wezterm.action.AdjustPaneSize({ "Up", 5 })
+}, {
+    key = "DownArrow",
+    mods = "CTRL",
+    action = wezterm.action.AdjustPaneSize({ "Down", 5 })
+}, {
+    key = "k",
+    mods = "CMD",
+    action = wezterm.action.ClearScrollback("ScrollbackAndViewport")
+}, {
+    key = "F9",
+    mods = "ALT",
+    action = wezterm.action.ShowTabNavigator
+}, {
+    key = "b",
+    mods = "CTRL",
+    action = wezterm.action.RotatePanes("CounterClockwise")
+}, {
+    key = "n",
+    mods = "CTRL",
+    action = wezterm.action.RotatePanes("Clockwise")
+}, {
+    key = "/",
+    mods = "CTRL",
+    action = wezterm.action.ShowTabNavigator
+}, {
+    key = "'",
+    mods = "CTRL",
+    action = wezterm.action.ShowLauncher
+} }
 
 return config
