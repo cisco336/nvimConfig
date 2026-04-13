@@ -1,7 +1,9 @@
+export REGISTRY_TOKEN=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
+
 # Performance optimization: skip global compinit
 export skip_global_compinit=1
 
-export EDITOR="code-insiders"
+export EDITOR="nvim"
 
 # Oh My Zsh configuration
 export ZSH="$HOME/.oh-my-zsh"
@@ -44,6 +46,7 @@ alias coverageweb="npm run test:unit:coverage"
 # Utility aliases
 alias fonts="atsutil fonts -list"
 alias chromenocors='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
+alias bravenocors='open -n -a /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser --args --user-data-dir="/tmp/brave_dev" --disable-web-security'
 
 # Conditional sourcing of external scripts
 [ -f "/Users/francisco.arleo/workspace/british/ancillaries-scripts/portforward.sh" ] && source /Users/francisco.arleo/workspace/british/ancillaries-scripts/portforward.sh
@@ -142,5 +145,10 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+export PATH="$PATH:/opt/homebrew/Cellar/ffmpeg-full/8.0.1_3/bin"
+
 # Load syntax highlighting last for better performance
 zsh_syntax_highlighting
+
+# Mole shell completion
+if output="$(mole completion zsh 2>/dev/null)"; then eval "$output"; fi
