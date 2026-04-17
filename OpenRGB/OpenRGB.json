@@ -5,7 +5,7 @@
         "enabled": true,
         "host": "0.0.0.0",
         "port": "6742",
-        "profile": "Purple_greenBlue",
+        "profile": "BackgroundMap",
         "setclient": false,
         "setcustom": false,
         "setminimized": true,
@@ -1644,7 +1644,6 @@
             "Razer Kraken Kitty Black Edition V2": true,
             "Razer Kraken Kitty Edition": true,
             "Razer Kraken Ultimate": true,
-            "Razer Kraken V3 HyperSense": true,
             "Razer Lancehead 2017 (Wired)": true,
             "Razer Lancehead 2017 (Wireless)": true,
             "Razer Lancehead 2019 (Wired)": true,
@@ -1998,27 +1997,38 @@
             "Z370 AORUS Ultra Gaming-CF"
         ]
     },
-    "Theme": {
-        "theme": "Dark"
+    "Plugins": {
+        "plugins": [
+            {
+                "description": "Provides a variety of custom effects",
+                "enabled": true,
+                "name": "OpenRGB Effects Plugin"
+            },
+            {
+                "description": "Group and organize your devices on a spatial map",
+                "enabled": true,
+                "name": "OpenRGB Visual Map Plugin"
+            }
+        ]
     },
     "UserInterface": {
         "autoload_profiles": {
             "exit_profile": {
-                "enabled": true,
-                "name": "Purple_greenBlue"
+                "enabled": false,
+                "name": ""
             },
             "resume_profile": {
-                "enabled": true,
-                "name": "Purple_greenBlue"
+                "enabled": false,
+                "name": ""
             },
             "suspend_profile": {
-                "enabled": true,
-                "name": "Purple_greenBlue"
+                "enabled": false,
+                "name": ""
             }
         },
         "exit_profile": {
-            "profile_name": "",
-            "set_on_exit": false
+            "profile_name": "BackgroundMap",
+            "set_on_exit": true
         },
         "geometry": {
             "height": 0,
@@ -2030,7 +2040,6 @@
         },
         "greyscale_tray_icon": false,
         "language": "default",
-        "minimize_on_close": true,
-        "show_led_view": true
+        "minimize_on_close": true
     }
 }

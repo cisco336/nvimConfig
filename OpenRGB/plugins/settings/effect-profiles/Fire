@@ -1,0 +1,131 @@
+{
+    "Effects": [
+        {
+            "AllowOnlyFirst": false,
+            "AutoStart": false,
+            "Brightness": 100,
+            "ControllerZones": [],
+            "CustomName": "",
+            "CustomSettings": {
+                "amplitude": 8.90999984741211,
+                "background": 0,
+                "freq_m1": 14.59999942779541,
+                "freq_m10": 93.2699966430664,
+                "freq_m11": 0.5799999833106995,
+                "freq_m12": 0.07999999821186066,
+                "freq_m2": 7.319999694824219,
+                "freq_m3": 24.760000228881836,
+                "freq_m4": 0.14000000059604645,
+                "freq_m5": 14.979999542236328,
+                "freq_m6": 83.65999603271484,
+                "freq_m7": 0.28999999165534973,
+                "freq_m8": 5.0,
+                "freq_m9": 20.15999984741211,
+                "frequency": 4.460000038146973,
+                "thickness": 9
+            },
+            "EffectClassName": "FractalMotion",
+            "FPS": 60,
+            "RandomColors": false,
+            "Slider2Val": 1,
+            "Speed": 110,
+            "Temperature": -9,
+            "Tint": 0,
+            "UserColors": [
+                16765952
+            ]
+        },
+        {
+            "AllowOnlyFirst": false,
+            "AutoStart": true,
+            "Brightness": 100,
+            "ControllerZones": [
+                {
+                    "description": "Virtual controller provided by VisualMap plugin",
+                    "is_segment": false,
+                    "location": "Somewhere over the rainbow",
+                    "name": "Huntsman",
+                    "reverse": false,
+                    "segment_idx": -1,
+                    "self_brightness": 100,
+                    "serial": "VISUAL_MAP_VISUAL_CONTROLLER_SERIAL",
+                    "vendor": "VisualMap plugin",
+                    "version": "1.0.0",
+                    "zone_idx": 0
+                }
+            ],
+            "CustomName": "",
+            "CustomSettings": {
+                "groups": [
+                    {
+                        "composer_fn": 0,
+                        "layers": [
+                            {
+                                "composer_fn": 0,
+                                "effect_settings": {
+                                    "AllowOnlyFirst": false,
+                                    "Brightness": 100,
+                                    "CustomName": "",
+                                    "CustomSettings": {
+                                        "amplitude": 8.90999984741211,
+                                        "background": 0,
+                                        "freq_m1": 14.59999942779541,
+                                        "freq_m10": 93.2699966430664,
+                                        "freq_m11": 0.5799999833106995,
+                                        "freq_m12": 0.07999999821186066,
+                                        "freq_m2": 7.319999694824219,
+                                        "freq_m3": 24.760000228881836,
+                                        "freq_m4": 0.14000000059604645,
+                                        "freq_m5": 14.979999542236328,
+                                        "freq_m6": 83.65999603271484,
+                                        "freq_m7": 0.28999999165534973,
+                                        "freq_m8": 5.0,
+                                        "freq_m9": 20.15999984741211,
+                                        "frequency": 4.460000038146973,
+                                        "thickness": 9
+                                    },
+                                    "EffectClassName": "FractalMotion",
+                                    "FPS": 60,
+                                    "RandomColors": true,
+                                    "Slider2Val": 1,
+                                    "Speed": 110,
+                                    "Temperature": -9,
+                                    "Tint": 0,
+                                    "UserColors": [
+                                        25343
+                                    ]
+                                }
+                            },
+                            {
+                                "composer_fn": 0,
+                                "effect_settings": {
+                                    "AllowOnlyFirst": false,
+                                    "Brightness": 100,
+                                    "CustomName": "",
+                                    "CustomSettings": {
+                                        "saturation": 120
+                                    },
+                                    "EffectClassName": "Bloom",
+                                    "FPS": 60,
+                                    "RandomColors": false,
+                                    "Slider2Val": 1,
+                                    "Speed": 90,
+                                    "Temperature": -18,
+                                    "Tint": 23
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "EffectClassName": "Layers",
+            "FPS": 60,
+            "RandomColors": false,
+            "Slider2Val": 1,
+            "Speed": 1,
+            "Temperature": 0,
+            "Tint": 0
+        }
+    ],
+    "version": 2
+}

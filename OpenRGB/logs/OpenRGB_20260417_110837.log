@@ -1,0 +1,39 @@
+    OpenRGB v0.9
+    Commit: b5f46e3f1de03595656c682fc2f068b66e735e63 from 2023-07-09 22:51:47 -0500
+    Launched: 20260417_110837
+====================================================================================================
+
+1015  |Info:    ------------------------------------------------------
+1015  |Info:    |               Start device detection               |
+1015  |Info:    ------------------------------------------------------
+1037  |Info:    Initializing HID interfaces: Success
+1045  |Info:    ------------------------------------------------------
+1046  |Info:    |             Detecting I2C interfaces               |
+1046  |Info:    ------------------------------------------------------
+1046  |Info:    ------------------------------------------------------
+1046  |Info:    |               Detecting I2C devices                |
+1046  |Info:    ------------------------------------------------------
+1046  |Info:    ------------------------------------------------------
+1046  |Info:    |               Detecting I2C PCI devices            |
+1046  |Info:    ------------------------------------------------------
+1047  |Info:    ------------------------------------------------------
+1047  |Info:    |               Detecting HID devices                |
+1047  |Info:    ------------------------------------------------------
+1139  |Info:    [KLM] Created new Tenkeyless ANSI QWERTY with 6 rows and 17 columns containing 87 keys
+1139  |Info:    [Razer Huntsman Tournament Edition] Registering RGB controller
+1139  |Info:    ------------------------------------------------------
+1139  |Info:    |              Detecting other devices               |
+1139  |Info:    ------------------------------------------------------
+1166  |Info:    ------------------------------------------------------
+1166  |Info:    |                Detection completed                 |
+1166  |Info:    ------------------------------------------------------
+138049|Info:    [Huntsman] Registering RGB controller
+383020|Info:    Found file: BackgroundMap.orp attempting to validate header
+383020|Info:    Valid v4 profile found for BackgroundMap
+408985|Info:    Found file: BackgroundMap.orp attempting to validate header
+408987|Info:    Valid v4 profile found for BackgroundMap
+409689|Info:    Found file: BackgroundMap.orp attempting to validate header
+409694|Info:    Valid v4 profile found for BackgroundMap
+1479598|Info:    Found file: BackgroundMap.orp attempting to validate header
+1479598|Info:    Valid v4 profile found for BackgroundMap
+1482518|Info:    [Huntsman] Unregistering RGB controller

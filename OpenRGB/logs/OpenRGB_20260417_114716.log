@@ -1,0 +1,34 @@
+    OpenRGB v0.9
+    Commit: b5f46e3f1de03595656c682fc2f068b66e735e63 from 2023-07-09 22:51:47 -0500
+    Launched: 20260417_114716
+====================================================================================================
+
+1     |Info:    Found file: BackgroundMap.orp attempting to validate header
+1     |Info:    Valid v4 profile found for BackgroundMap
+1016  |Info:    ------------------------------------------------------
+1017  |Info:    |               Start device detection               |
+1017  |Info:    ------------------------------------------------------
+1140  |Info:    Initializing HID interfaces: Success
+1147  |Info:    ------------------------------------------------------
+1147  |Info:    |             Detecting I2C interfaces               |
+1147  |Info:    ------------------------------------------------------
+1147  |Info:    ------------------------------------------------------
+1147  |Info:    |               Detecting I2C devices                |
+1147  |Info:    ------------------------------------------------------
+1147  |Info:    ------------------------------------------------------
+1147  |Info:    |               Detecting I2C PCI devices            |
+1147  |Info:    ------------------------------------------------------
+1149  |Info:    ------------------------------------------------------
+1149  |Info:    |               Detecting HID devices                |
+1149  |Info:    ------------------------------------------------------
+1210  |Info:    [KLM] Created new Tenkeyless ANSI QWERTY with 6 rows and 17 columns containing 87 keys
+1210  |Info:    [Razer Huntsman Tournament Edition] Registering RGB controller
+1210  |Info:    ------------------------------------------------------
+1210  |Info:    |              Detecting other devices               |
+1210  |Info:    ------------------------------------------------------
+1237  |Info:    ------------------------------------------------------
+1237  |Info:    |                Detection completed                 |
+1237  |Info:    ------------------------------------------------------
+1572  |Info:    [Huntsman] Registering RGB controller
+3826  |Info:    Profile loading: Succeeded for Razer Huntsman Tournament Edition @ HID: DevSrvsID:4295027822
+3826  |Info:    Profile loading: Succeeded for Huntsman @ Somewhere over the rainbow

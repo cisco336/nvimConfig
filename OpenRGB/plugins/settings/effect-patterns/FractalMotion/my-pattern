@@ -1,0 +1,32 @@
+{
+    "AllowOnlyFirst": false,
+    "Brightness": 100,
+    "CustomSettings": {
+        "amplitude": 8.90999984741211,
+        "background": 0,
+        "freq_m1": 14.59999942779541,
+        "freq_m10": 93.2699966430664,
+        "freq_m11": 0.5899999737739563,
+        "freq_m12": 0.07999999821186066,
+        "freq_m2": 7.319999694824219,
+        "freq_m3": 24.76999855041504,
+        "freq_m4": 0.14000000059604645,
+        "freq_m5": 14.979999542236328,
+        "freq_m6": 83.65999603271484,
+        "freq_m7": 0.29999998211860657,
+        "freq_m8": 5.0,
+        "freq_m9": 20.15999984741211,
+        "frequency": 4.460000038146973,
+        "thickness": 9
+    },
+    "EffectClassName": "FractalMotion",
+    "FPS": 60,
+    "RandomColors": true,
+    "Slider2Val": 1,
+    "Speed": 110,
+    "Temperature": -9,
+    "Tint": 0,
+    "UserColors": [
+        25343
+    ]
+}
