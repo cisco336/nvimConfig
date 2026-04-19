@@ -1,0 +1,9 @@
+[[mgr.prepend_keymap]]
+    on = [ "g", "i" ]
+    run = 'cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
+    desc = "Go to iCloud"
+
+[[mgr.prepend_keymap]]
+    on = [ "g", "v" ]
+    run = 'cd /Volumes'
+    desc = "Go to Volumes"
