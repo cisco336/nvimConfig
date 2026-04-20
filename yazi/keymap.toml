@@ -7,3 +7,8 @@
     on = [ "g", "v" ]
     run = 'cd /Volumes'
     desc = "Go to Volumes"
+
+[[mgr.prepend_keymap]]
+    on = [ "g", "l" ]
+    run = 'git pull'
+    desc = "Git pull"

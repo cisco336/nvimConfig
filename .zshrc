@@ -49,12 +49,12 @@ alias fonts="atsutil fonts -list"
 alias chromenocors='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
 
 # Conditional sourcing of external scripts
-# [ -f "/Users/francisco.arleo/workspace/british/ancillaries-scripts/portforward.sh" ] && source /Users/francisco.arleo/workspace/british/ancillaries-scripts/portforward.sh
-# [ -f "/Users/francisco.arleo/workspace/british/ancillaries-scripts/setprofile.sh" ] && source /Users/francisco.arleo/workspace/british/ancillaries-scripts/setprofile.sh
-# [ -f "/Users/francisco.arleo/workspace/british/ancillaries-scripts/convertmp.sh" ] && source /Users/francisco.arleo/workspace/british/ancillaries-scripts/convertmp.sh
+[ -f "$HOME/workspace/british/ancillaries-scripts/portforward.sh" ] && source $HOME/workspace/british/ancillaries-scripts/portforward.sh
+[ -f "$HOME/workspace/british/ancillaries-scripts/setprofile.sh" ] && source $HOME/workspace/british/ancillaries-scripts/setprofile.sh
+[ -f "$HOME/workspace/british/ancillaries-scripts/convertmp.sh" ] && source $HOME/workspace/british/ancillaries-scripts/convertmp.sh
 
-alias converter='/bin/bash /Users/francisco/scripts/convertmp.sh'
-alias nameFixer='/bin/bash /Users/francisco/scripts/nameFixer.sh'
+alias converter='/bin/bash $HOME/scripts/convertmp.sh'
+alias nameFixer='/bin/bash $HOME/scripts/nameFixer.sh'
 
 # --- Terminal Utilities ---
 
@@ -152,4 +152,4 @@ function y() {
 zsh_syntax_highlighting
 
 # OpenClaw Completion
-source "/Users/francisco/.openclaw/completions/openclaw.zsh"
+[ -f "$HOME/.openclaw/completions/openclaw.json" ] && csource "$HOME/.openclaw/completions/openclaw.zsh"
