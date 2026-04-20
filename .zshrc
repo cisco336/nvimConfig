@@ -1,12 +1,13 @@
-export REGISTRY_TOKEN=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
-
 # Performance optimization: skip global compinit
 export skip_global_compinit=1
 
-export EDITOR="nvim"
+export EDITOR="code-insiders"
 
 # Oh My Zsh configuration
 export ZSH="$HOME/.oh-my-zsh"
+
+# Ollama models
+export OLLAMA_MODELS="/Volumes/1TBNVME/ollama/models"
 
 # Minimal plugin set for faster startup
 plugins=(
@@ -46,12 +47,14 @@ alias coverageweb="npm run test:unit:coverage"
 # Utility aliases
 alias fonts="atsutil fonts -list"
 alias chromenocors='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
-alias bravenocors='open -n -a /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser --args --user-data-dir="/tmp/brave_dev" --disable-web-security'
 
 # Conditional sourcing of external scripts
-[ -f "/Users/francisco.arleo/workspace/british/ancillaries-scripts/portforward.sh" ] && source /Users/francisco.arleo/workspace/british/ancillaries-scripts/portforward.sh
-[ -f "/Users/francisco.arleo/workspace/british/ancillaries-scripts/setprofile.sh" ] && source /Users/francisco.arleo/workspace/british/ancillaries-scripts/setprofile.sh
-[ -f "/Users/francisco.arleo/workspace/british/ancillaries-scripts/convertmp.sh" ] && source /Users/francisco.arleo/workspace/british/ancillaries-scripts/convertmp.sh
+# [ -f "/Users/francisco.arleo/workspace/british/ancillaries-scripts/portforward.sh" ] && source /Users/francisco.arleo/workspace/british/ancillaries-scripts/portforward.sh
+# [ -f "/Users/francisco.arleo/workspace/british/ancillaries-scripts/setprofile.sh" ] && source /Users/francisco.arleo/workspace/british/ancillaries-scripts/setprofile.sh
+# [ -f "/Users/francisco.arleo/workspace/british/ancillaries-scripts/convertmp.sh" ] && source /Users/francisco.arleo/workspace/british/ancillaries-scripts/convertmp.sh
+
+alias converter='/bin/bash /Users/francisco/scripts/convertmp.sh'
+alias nameFixer='/bin/bash /Users/francisco/scripts/nameFixer.sh'
 
 # --- Terminal Utilities ---
 
@@ -145,10 +148,8 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-export PATH="$PATH:/opt/homebrew/Cellar/ffmpeg-full/8.0.1_3/bin"
-
 # Load syntax highlighting last for better performance
 zsh_syntax_highlighting
 
-# Mole shell completion
-if output="$(mole completion zsh 2>/dev/null)"; then eval "$output"; fi
+# OpenClaw Completion
+source "/Users/francisco/.openclaw/completions/openclaw.zsh"
